@@ -7,9 +7,9 @@ public class QuickSort {
     private static int[] arr;
 
     public static void main(String[] args) {
-        int arr[] = new int[10] ;
+        int[] arr = new int[10];
         Random random = new Random();
-        for (int i=0; i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100);
         }
         Arrays.stream(arr).forEach(s -> System.out.print(s + " "));
@@ -19,30 +19,30 @@ public class QuickSort {
     }
 
     private static void quicksort(int[] arr) {
-        quicksort(arr, 0, arr.length-1);
+        quicksort(arr, 0, arr.length - 1);
     }
 
     private static void quicksort(int[] arr, int lowIndex, int highIndex) {
-        if(lowIndex >= highIndex){
+        if (lowIndex >= highIndex) {
             return;
         }
         int pivot = arr[highIndex];
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
 
-        while (leftPointer < rightPointer){
-            while (arr[leftPointer] <= pivot && leftPointer < rightPointer){
+        while (leftPointer < rightPointer) {
+            while (arr[leftPointer] <= pivot && leftPointer < rightPointer) {
                 leftPointer++;
             }
-            while (arr[rightPointer] >= pivot && leftPointer < rightPointer){
+            while (arr[rightPointer] >= pivot && leftPointer < rightPointer) {
                 rightPointer--;
             }
             swap(arr, leftPointer, rightPointer);
         }
         swap(arr, leftPointer, highIndex);
 
-        quicksort(arr, 0, leftPointer-1);
-        quicksort(arr, leftPointer+1, highIndex);
+        quicksort(arr, 0, leftPointer - 1);
+        quicksort(arr, leftPointer + 1, highIndex);
     }
 
     private static void swap(int[] arr, int leftPointer, int rightPointer) {

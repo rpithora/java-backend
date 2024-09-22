@@ -2,7 +2,7 @@ package com.shaurya._6recursion;
 
 public class PrintSubset {
     public static void main(String[] args) {
-        String input = "AAB";
+        String input = "AB";
         String output = "";
         solution(input, output);
         System.out.println(cnt);

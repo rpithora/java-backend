@@ -12,6 +12,7 @@ public class LinkedHashMapDemo {
         linkedHashMap.put("one", 11);
         System.out.println(linkedHashMap);
 
+        //with access order it work as LRU
         LinkedHashMap linkedHashMapAccessOrder = new LinkedHashMap(2, .75f, true);
         linkedHashMapAccessOrder.put("one", 1);
         linkedHashMapAccessOrder.put("two", 2);

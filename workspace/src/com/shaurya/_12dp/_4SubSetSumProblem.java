@@ -6,7 +6,7 @@ public class _4SubSetSumProblem {
     public static void main(String[] args) {
         int []arr = {2, 3, 7, 8};
         int sum = 10;
-        String ans = new String();
+        String ans = "";
         boolean isExists = solution(arr, arr.length, sum, ans);
         System.out.println("isExists : " + isExists);
         Boolean [][]dp = new Boolean[arr.length+1][sum+1];

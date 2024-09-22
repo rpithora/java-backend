@@ -32,8 +32,8 @@ public class MergeSort {
         for(int i=midIndex; i<arrayLength; i++){
             rightArray[i-midIndex] = array[i];
         }*/
-        int leftArray[] = Arrays.copyOfRange(array, 0, midIndex);
-        int rightArray[] = Arrays.copyOfRange(array, midIndex, arrayLength);
+        int[] leftArray = Arrays.copyOfRange(array, 0, midIndex);
+        int[] rightArray = Arrays.copyOfRange(array, midIndex, arrayLength);
 
         mergeSort(leftArray);
         mergeSort(rightArray);

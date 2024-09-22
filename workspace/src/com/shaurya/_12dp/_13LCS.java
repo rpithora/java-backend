@@ -8,8 +8,8 @@ public class _13LCS {
         int length = solution(s1, s2, s1.length(), s2.length());
         System.out.println(length);
 
-        int A[] = {1, 2, 8, 2, 1};
-        int B[] = {8, 2, 1, 4, 7};
+        int[] A = {1, 2, 8, 2, 1};
+        int[] B = {8, 2, 1, 4, 7};
         int maxLength = solve(A, B, A.length, B.length);
         System.out.println(maxLength);
     }

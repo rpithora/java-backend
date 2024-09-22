@@ -5,9 +5,9 @@ import java.util.Arrays;
 // Find Minimum Coins
 public class _12CoinChangeII {
     public static void main(String[] args) {
-        int coins[] = {2, 3, 5};
+        int[] coins = {2, 3, 5};
         int sum = 5;
-        int dp[][] = new int[coins.length+1][sum+1];
+        int[][] dp = new int[coins.length+1][sum+1];
         int minWays = solution(coins, coins.length, sum, dp);
         for(int[] i : dp){
             Arrays.stream(i).forEach(s -> System.out.print(s + " "));

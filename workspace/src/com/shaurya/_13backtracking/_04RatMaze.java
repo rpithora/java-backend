@@ -3,36 +3,48 @@ package com.shaurya._13backtracking;
 import java.util.Arrays;
 
 public class _04RatMaze {
+    private boolean success = false;
+
     public static void main(String[] args) {
         _04RatMaze rat = new _04RatMaze();
-        int maze[][] = { { 1, 0, 0, 0 },
-                         { 1, 1, 0, 1 },
-                         { 0, 1, 0, 0 },
-                         { 1, 1, 1, 1 } };
+        int[][] maze = {{1, 0, 0, 0},
+                {1, 1, 0, 1},
+                {0, 1, 0, 0},
+                {1, 1, 1, 1}};
         int n = maze.length;
         int m = maze[0].length;
         System.out.println(rat.solveMaze(0, 0, maze, n, m));
-        for(int a[] : maze){
+        for (int[] a : maze) {
             Arrays.stream(a).forEach(s -> System.out.print(s + " "));
             System.out.println();
         }
     }
 
+    private boolean isValid(int row, int col, int n, int m, int[][] maze) {
+        return row >= 0 && col >= 0 && row < n && col < m && maze[row][col] == 1;
+    }
+
+    private boolean isSolved(int row, int col, int n, int m) {
+        return row == n - 1 && col == m - 1;
+    }
+
     private boolean solveMaze(int i, int j, int[][] maze, int n, int m) {
-        if(i == n-1 && j == m-1)
+        if (isSolved(i, j, n, m))
             return true;
 
-        if(i < 0 || i >= n || j < 0 || j >= m)
-            return false;
+        int[] idx = {0, 1, 0, -1};
+        int[] idy = {1, 0, -1, 0};
 
-        if(maze[i][j] == 1 || maze[i][j] == 2)
-            return false;
+        for (int k = 0; k < 4; k++) {
+            int nX = i + idx[k];
+            int nY = j + idy[k];
 
-        maze[i][j] = 2;
-
-        return solveMaze(i, j-1, maze, n, m)
-            || solveMaze(i, j+1, maze, n, m)
-            || solveMaze(i-1, j, maze, n, m)
-            || solveMaze(i+1, j, maze, n, m);
+            if (isValid(nX, nY, n, m, maze)) {
+                maze[nX][nY] = 0;
+                success = solveMaze(nX, nY, maze, n, m);
+                maze[nX][nY] = 1;
+            }
+        }
+        return success;
     }
 }

@@ -2,13 +2,13 @@ package com.shaurya._12dp;
 
 public class _12CoinChange {
     public static void main(String[] args) {
-        int arr[] = {1, 2, 5}; // 11111, 1112, 113, 23 122
-        int sum = 11;
+        int[] arr = {1, 2, 3}; // 11111, 1112, 113, 23 122
+        int sum = 5;
         int diffWays = 0;
         diffWays = solution(arr, arr.length, sum);
         System.out.println("Different Ways : " + diffWays);
 
-        int dp[][] = new int[arr.length+1][sum+1];
+        int[][] dp = new int[arr.length+1][sum+1];
         diffWays = solutionTopDownUnbounded(arr, arr.length, sum, dp);
         System.out.println(diffWays);
     }
