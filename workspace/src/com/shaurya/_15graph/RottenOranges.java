@@ -4,12 +4,13 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//BFS
 public class RottenOranges {
 
     public static void main(String[] args) {
         int [][]grid = {{2,1,1}, {1,1,0},{0,1,1}};
-        RottenOranges rottonOranges = new RottenOranges();
-        int totalTime = rottonOranges.orangesRotting(grid);
+        RottenOranges rottenOranges = new RottenOranges();
+        int totalTime = rottenOranges.orangesRotting(grid);
         System.out.println(totalTime);
     }
 

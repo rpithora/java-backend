@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class _4SubSetSumProblem {
     public static void main(String[] args) {
-        int []arr = {2, 3, 7, 8};
+        int []arr = {2, 3, 7, 1};
         int sum = 10;
         String ans = "";
         boolean isExists = solution(arr, arr.length, sum, ans);
